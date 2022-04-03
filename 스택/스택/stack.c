@@ -55,6 +55,36 @@ Item Peek(Stack stack)
 		terminate("Error in Peek : Stack is empty.");
 	return stack->top->data;
 }
+
+Item Pop(Stack stack)
+{
+	if (Is_empty(stack))
+		terminate("Error in Pop : Stack is empty.");
+	Node old_node = stack->top;
+	int old_data = old_node->data;
+
+	stack->top = old_node->next;
+
+	Remove_node(old_node);
+	if (Is_empty(stack))
+		Remove_stack(stack);
+	
+	return old_data;
+}
+
+void Remove_node(Node old_node)
+{
+	free(old_node);
+	old_node->data = NULL;
+	old_node->next = NULL;
+}
+
+void Remove_stack(Stack stack)
+{
+	free(stack);
+	stack->top = NULL;
+}
+
 void terminate(char* message) 
 {
 	printf("%s\n", message);

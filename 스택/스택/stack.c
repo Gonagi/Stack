@@ -49,6 +49,12 @@ void Push(Stack stack, Item data)
 	}
 }
 
+Item Peek(Stack stack)
+{
+	if (Is_empty(stack))
+		terminate("Error in Peek : Stack is empty.");
+	return stack->top->data;
+}
 void terminate(char* message) 
 {
 	printf("%s\n", message);

@@ -14,4 +14,5 @@ Node Create_node();
 Stack Create_stacK();
 bool Is_empty(Stack);
 void Push(Stack, Item);
+Item Peek(Stack);
 void terminate(char*);

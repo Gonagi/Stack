@@ -18,4 +18,5 @@ Item Peek(Stack);
 Item Pop(Stack);
 void Remove_node(Node);
 void Remove_stack(Stack);
+void Print_stack(Stack);
 void terminate(char*);

@@ -85,6 +85,24 @@ void Remove_stack(Stack stack)
 	stack->top = NULL;
 }
 
+void Print_stack(Stack stack)
+{
+	if (Is_empty(stack))
+		printf("stack is empty.\n");
+	else {
+		Node node = stack->top;
+
+		printf("Stack : ");
+		while (node->next != NULL) {
+			printf("%d --> ", node->data);
+			node = node->next;
+			if (node->next == NULL) {
+				printf("%d\n\n", node->data);
+			}
+		}
+	}
+}
+
 void terminate(char* message) 
 {
 	printf("%s\n", message);

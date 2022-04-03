@@ -20,7 +20,7 @@ Node Create_node()
 	return new_node;
 }
 
-Stack Create_stack()
+Stack Create_stacK()
 {
 	Stack new_stack = (Stack)malloc(sizeof(struct stack));
 	if (new_stack == NULL)
@@ -93,12 +93,14 @@ void Print_stack(Stack stack)
 		Node node = stack->top;
 
 		printf("Stack : ");
-		while (node->next != NULL) {
-			printf("%d --> ", node->data);
+		while (node != NULL) {
+			printf("%d", node->data);
 			node = node->next;
-			if (node->next == NULL) {
-				printf("%d\n\n", node->data);
-			}
+			
+			if (node == NULL)
+				printf("\n\n");
+			else 
+				printf(" --> ");
 		}
 	}
 }

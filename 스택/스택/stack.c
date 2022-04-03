@@ -30,6 +30,25 @@ Stack Create_stack()
 	return new_stack;
 }
 
+bool Is_empty(Stack stack)
+{
+	return stack->top == NULL;
+}
+
+void Push(Stack stack, Item data)
+{
+	Node new_node = Create_node();
+	new_node->data = data;
+
+	if (Is_empty(stack))
+		stack->top = new_node;
+
+	else {
+		new_node->next = stack->top;
+		stack->top = new_node;
+	}
+}
+
 void terminate(char* message) 
 {
 	printf("%s\n", message);
